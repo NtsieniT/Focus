@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework> 
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Incident\Common\Service\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Linq.Extras" Version="1.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
+    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

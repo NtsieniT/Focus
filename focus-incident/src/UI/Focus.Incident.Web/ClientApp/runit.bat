@@ -1,0 +1,1 @@
+ng serve --port 8031 --ssl --ssl-key ..\certs\localhost_privatekey.pem --ssl-cert ..\certs\localhost_publiccert.pem

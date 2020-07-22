@@ -1,0 +1,16 @@
+<div class="alert alert-info d-flex align-items-center" *ngIf="messageInfo">
+  <i class="fa fa-info-circle fa-2x fa-pull-left"></i>
+  <span [innerHTML]="messageInfo"></span>
+</div>
+<div class="alert alert-danger d-flex align-items-center" *ngIf="messageError">
+  <i class="fa fa-exclamation-circle fa-2x fa-pull-left"></i>
+  <span [innerHTML]="messageError"></span>
+</div>
+<div class="alert alert-warning d-flex align-items-center" *ngIf="messageUnauthorized">
+  <i class="fa fa-exclamation-triangle fa-2x fa-pull-left"></i>
+  <span [innerHTML]="messageUnauthorized"></span>
+</div>
+<div class="alert alert-success d-flex align-items-center" *ngIf="messageSuccess">
+  <i class="fa fa-thumbs-up fa-2x fa-pull-left"></i>
+  <span [innerHTML]="messageSuccess"></span>
+</div> 

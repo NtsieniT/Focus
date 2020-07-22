@@ -1,0 +1,7 @@
+.small-card {
+  height: 250px !important;
+}
+
+nb-card-body ul {
+  padding-left: 20px !important;
+}

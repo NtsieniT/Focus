@@ -1,0 +1,17 @@
+.dockerignore
+.env
+.git
+.gitignore
+.vs
+.vscode
+docker-compose*.yml
+docker-compose.dcproj
+*.sln
+test
+build
+tmp
+gitpush.bat
+**/bin/
+**/obj/
+**/node_modules/
+**/deploy/

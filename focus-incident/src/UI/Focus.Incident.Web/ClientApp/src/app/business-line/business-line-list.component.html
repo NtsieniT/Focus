@@ -1,0 +1,21 @@
+<div>
+  <h2><i class="nb-sunny">Open Incidents</i></h2>
+
+  <notifications></notifications>
+
+  <kendo-grid [data]="view"
+              [resizable]="false"
+              [pageSize]="state.take"
+              [skip]="state.skip"
+              [sort]="state.sort"
+              [filter]="state.filter"
+              [filterable]="true"
+              [selectable]="false"
+              [kendoGridSelectBy]="'Id'"
+              [pageable]="{ pageSizes: pageSizes }"
+              [sortable]="true"
+              (dataStateChange)="dataStateChange($event)">
+    <kendo-grid-column kendoGridDetailTemplate field="BusinessLine" title="Primary Business Line" [width]="40"></kendo-grid-column>
+    <kendo-grid-column kendoGridDetailTemplate field="Counter" title="Count" [width]="40" [filterable]="false"></kendo-grid-column>
+  </kendo-grid>
+</div>

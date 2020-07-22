@@ -1,0 +1,134 @@
+// @nebular theming framework
+@import '~@nebular/theme/styles/theming';
+// @nebular out of the box themes
+@import '~@nebular/theme/styles/themes';
+
+// which themes you what to enable (empty to enable all)
+$nb-enabled-themes: (default, cosmic);
+
+$nb-themes: nb-register-theme((
+ // app wise variables for each theme
+  sidebar-header-gap: 2rem,
+  sidebar-header-height: initial,
+  layout-content-width: 1400px,
+
+  font-main: Roboto,
+  font-secondary: Exo,
+
+  // Jason: overrides
+  color-primary: #DD0033,
+  color-success: #00d977,
+  color-info: #0088ff,
+  color-warning: #ffa100,
+  color-danger: #ff386a,
+  
+  color-gray: rgba(81, 113, 165, 0.15),
+  color-neutral: transparent,
+  color-white: #ffffff,
+  color-disabled: rgba(255, 255, 255, 0.4),
+   
+  color-fg: #424242, 
+  color-fg-text: #757575, 
+  color-fg-highlight: color-primary, 
+
+  menu-fg: color-fg,
+  menu-active-fg: color-fg-highlight,
+  menu-submenu-fg: color-fg,
+   
+  link-color: #E57373,
+  link-color-hover: #E57373,
+  link-color-visited: #E57373,
+
+  separator: #E0E0E0,
+  shadow: 0 2px 12px 0 #a4abb3,
+
+  sidebar-width: 16.25rem,
+  sidebar-width-compact: 3.45rem,
+
+  btn-hero-shadow: 0 4px 10px 0 rgba(33, 7, 77, 0.5),
+  btn-hero-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3),
+  btn-hero-bevel-size: 0 3px 0 0,
+  btn-hero-glow-size: 0 2px 8px 0,
+  btn-secondary-border: color-primary,
+  btn-outline-fg: color-fg-heading,
+  btn-outline-hover-fg: color-fg-heading,
+  btn-group-bg: #373273,
+  btn-group-separator: #312c66,
+
+), default, default);
+
+$nb-themes: nb-register-theme((
+  // app wise variables for each theme
+  sidebar-header-gap: 2rem,
+  sidebar-header-height: initial,
+  layout-content-width: 1400px,
+  font-main: Roboto,
+  font-secondary: Exo,
+
+  // Jason: overrides
+  color-primary: #DD0033,
+  color-success: #00d977,
+  color-info: #0088ff,
+  color-warning: #ffa100,
+  color-danger: #ff386a,
+
+  color-gray: rgba(81, 113, 165, 0.15),
+  color-neutral: transparent,
+  color-white: #ffffff,
+  color-disabled: rgba(255, 255, 255, 0.4),
+  
+  color-bg: #222222,
+  layout-bg: #303030,
+   
+  /*color-fg: #a4abb3, color-fg-text: #a4abb3, */
+  color-fg: #a4abb3, 
+  color-fg-text: #757575, 
+  color-fg-highlight: #color-fg-highlight, 
+
+  link-color: #E57373,
+  link-color-hover: #E57373,
+  link-color-visited: #E57373,
+
+  separator: #303030,
+  shadow: 0 2px 12px 0 #303030,
+  
+  search-bg: linear-gradient(to right, #B71C1C, #F44336),
+   
+  sidebar-width: 16.25rem,
+  sidebar-width-compact: 3.45rem,
+
+  menu-font-family: font-secondary,
+  menu-font-size: font-size,
+  menu-font-weight: font-weight-bolder,
+  menu-fg: color-fg,
+  menu-bg: color-bg,
+  menu-active-fg: color-fg-heading,
+  menu-active-bg: color-bg,
+  menu-active-font-weight: font-weight-bold,
+
+  menu-submenu-bg: color-bg,
+  menu-submenu-fg: color-fg-text,
+  menu-submenu-active-fg: color-fg-heading,
+  menu-submenu-active-bg: color-bg,
+  menu-submenu-active-border-color: color-fg-highlight,
+  menu-submenu-active-shadow: none,
+  menu-submenu-hover-fg: menu-submenu-active-fg,
+  menu-submenu-hover-bg: menu-submenu-bg,
+  menu-submenu-item-border-width: 0.125rem,
+  menu-submenu-item-border-radius: radius,
+  menu-submenu-item-padding: 0.5rem 1rem,
+  menu-submenu-item-container-padding: 0 1.25rem,
+  menu-submenu-padding: 0.5rem,
+
+  menu-group-font-weight: font-weight-bolder,
+  menu-group-font-size: 0.875rem,
+  menu-group-fg: color-fg,
+  menu-group-padding: 1rem 1.25rem,
+  menu-item-padding: 0.675rem 0.75rem,
+  menu-item-separator: separator,
+  menu-icon-font-size: 2.5rem,
+  menu-icon-margin: 0 0.25rem 0,
+  menu-icon-color: color-fg,
+  menu-icon-active-color: color-fg-heading,
+
+), cosmic, cosmic);

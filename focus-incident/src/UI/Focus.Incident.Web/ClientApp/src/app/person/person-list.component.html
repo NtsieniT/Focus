@@ -1,0 +1,20 @@
+<div>
+  <h2><i class="nb-sunny">Persons</i></h2>
+
+  <notifications></notifications>
+
+  <kendo-grid [data]="view"
+              [pageSize]="state.take"
+              [skip]="state.skip"
+              [sort]="state.sort"
+              [filter]="state.filter"
+              [selectable]="true"
+              [pageable]="{ pageSizes: pageSizes }"
+              [sortable]="true"
+              [filterable]="true"
+              (dataStateChange)="dataStateChange($event)">
+    <kendo-grid-column kendoGridDetailTemplate field="personName" title="Persons" [width]="40"></kendo-grid-column>
+    <kendo-grid-column kendoGridDetailTemplate field="Counter" title="Counts" [width]="40" [filterable]="false"></kendo-grid-column>
+
+  </kendo-grid>
+</div>

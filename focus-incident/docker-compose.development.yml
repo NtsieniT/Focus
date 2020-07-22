@@ -1,0 +1,60 @@
+version: '3.4'
+
+services:
+  focus_incident_api:
+    image: 127.0.0.1:5999/focus_incident_api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:8030;http://+:5030
+      - ASPNETCORE_HTTPS_PORT=8030
+      - AUTHENTICATION_AUTHORITY=https://retinadev.intra.absa.co.za:8000
+      - AUTHORIZATION_AUTHORITY=https://retinadev.intra.absa.co.za:8001
+      - ConnectionStrings__DefaultConnection=Data Source=22.150.70.132,1433;Initial Catalog=Focus.Incident;User Id=admin;Password=P@ssword1;
+    ports:
+      - "5030:5030"
+      - "8030:8030"
+    build: 
+      args:
+        - profile=Development
+        - http_proxy=http://22.150.52.72:3128
+        - https_proxy=http://22.150.52.72:3128
+    deploy:
+      replicas: 1
+    volumes:
+      # mount the certificate bundle so that the backchannel authentication/authorization can validate the cert from the reverse proxy
+      - ./deploy/staging/etc/ssl/certs:/etc/ssl/certs:ro;
+
+  focus_incident_web:
+    image: 127.0.0.1:5999/focus_incident_web
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:8031;http://+:5031
+      - ASPNETCORE_HTTPS_PORT=8031
+    ports:
+      - "5031:5031"
+      - "8031:8031"
+    build: 
+      args:
+        - profile=Development
+        - http_proxy=http://22.150.52.72:3128
+        - https_proxy=http://22.150.52.72:3128
+    deploy:
+      replicas: 1
+
+  focus_incident_job:
+    image: 127.0.0.1:5999/focus_incident_job
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development     
+      - AUTHENTICATION_AUTHORITY=https://retinadev.intra.absa.co.za:8000
+      - AUTHORIZATION_AUTHORITY=https://retinadev.intra.absa.co.za:8001
+      - ConnectionStrings__DefaultConnection=Data Source=22.150.70.132,1433;Initial Catalog=Focus.Incident;User Id=admin;Password=P@ssword1;
+    build: 
+      args:
+        - profile=Development
+        - http_proxy=http://22.150.52.72:3128
+        - https_proxy=http://22.150.52.72:3128
+    deploy:
+      replicas: 1
+    volumes:
+      # mount the certificate bundle so that the backchannel authentication/authorization can validate the cert from the reverse proxy
+      - ./deploy/staging/etc/ssl/certs:/etc/ssl/certs:ro;

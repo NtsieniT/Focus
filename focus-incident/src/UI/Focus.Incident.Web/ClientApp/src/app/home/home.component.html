@@ -1,0 +1,29 @@
+<nb-card size="small" class="small-card">
+  <nb-card-body>
+    <div class="justify-content-center row">
+      <i class="fa fa-4x fa-life-ring"></i>
+    </div>
+    <div class="justify-content-center row">
+      <h1>Welcome to &nbsp;<i><strong>focus-</strong><span style="color:#DD0033">incident</span></i>!</h1>
+    </div>
+    <div class="justify-content-center row">
+      <div *ngIf="!isLoggedIn">
+        Please log in to access the system.
+      </div>
+
+      <div *ngIf="isLoggedIn">
+        Use the navigation menu to access areas of the system.
+      </div>
+    </div>
+    <br />
+    <div class="justify-content-center row">
+      <div *ngIf="!isLoggedIn">
+        <a class="btn btn-hero-primary btn-demo" role="button" routerLink="/login"><span class="k-icon k-i-lock"></span> Login</a>
+      </div>
+
+      <div *ngIf="isLoggedIn">
+        <a class="btn btn-hero-primary btn-demo" role="button" routerLink="/logout"><span class="k-icon k-i-lock"></span> Logout</a>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

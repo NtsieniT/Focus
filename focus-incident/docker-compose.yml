@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  focus_incident_api:
+    build:
+      context: .
+      dockerfile: src/Service/Focus.Incident.API/Dockerfile
+
+  focus_incident_web:
+    build:
+      context: .
+      dockerfile: src/UI/Focus.Incident.Web/Dockerfile
+    depends_on:
+      - focus_incident_api
+
+  focus_incident_job:
+    build:
+      context: .
+      dockerfile: src/Job/Focus.Incident.Job/Dockerfile

@@ -1,0 +1,264 @@
+$font-family-monospace: nb-theme(font-main);
+$primary: nb-theme(color-primary);
+$secondary: nb-theme(color-secondary);
+$base-text: nb-theme(color-fg);
+$button-bg: nb-theme(color-primary);
+$button-text: nb-theme(color-fg);
+
+@import "~@progress/kendo-theme-material/scss/all";
+
+@mixin focus-custom-theme() {
+  .logo {
+    .portal {
+      cursor: pointer;
+    }
+
+    .portal:hover {
+      text-decoration: underline;
+    }
+
+    .home {
+      color: nb-theme(color-primary);
+      cursor: pointer;
+    }
+
+    .home:hover {
+      text-decoration: underline;
+    }
+  }
+  /*align icons in page titles*/
+  h1, h2, h3, h4, h5 {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 i, h2 i, h3 i, h4 i, h5 i {
+    font-size: 2.5rem;
+  }
+  /********** START: Bootstrap overrides **********/
+  /*make links without a href look clickable*/
+  a:not([href]):not([tabindex]) {
+    color: nb-theme(color-primary) !important;
+    cursor: pointer;
+  }
+  /*alerts*/
+  .alert.alert-danger {
+    margin-top: 1px !important;
+    border: 1px dashed #ff5680 !important;
+  }
+  /********** END: Bootstrap overrides **********/
+  /*** START: Nebular overrides **********/
+  /*fix for bug with menus disappearing when the screen is on a small viewport*/
+  .menu-items.expanded {
+    max-height: none !important;
+  }
+  /*make user container look clickable*/
+  .user-container {
+    cursor: pointer;
+  }
+
+  ol, ul {
+    padding-left: 0px !important;
+  }
+
+  nb-menu .menu-item a.active, nb-menu .menu-item a:hover {
+    font-weight: inherit !important;
+  }
+
+  .user-picture {
+    border-color: nb-theme(color-fg-text) !important;
+  }
+
+  ngx-header > nb-actions > nb-action.toggle-layout > a > i {
+    color: nb-theme(color-fg) !important;
+  }
+
+  .theme-switch span {
+    color: nb-theme(color-fg) !important;
+  }
+  /********** END: Nebular overrides **********/
+  /********** START: Charts *********/
+  .k-chart.k-widget text {
+    fill: nb-theme(color-fg) !important;
+  }
+  /********* END: Charts *********/
+  /********** START: Kendo overrides *********/
+  .k-grid, .k-grid-content, .k-upload, .k-header, .k-pager-wrap, .k-dialog, .k-window-content, .k-dialog-content, .k-dialog-buttongroup, .k-list-container, .k-filter-row, .k-grid-header, .k-grid-footer, .k-footer-template, .k-grouping-header, .k-treeview, .k-panelbar, .k-panelbar .k-content {
+    background-color: nb-theme(color-bg);
+    color: nb-theme(color-fg);
+    border-color: nb-theme(separator) !important;
+  }
+  /*grid*/
+  .k-grid td {
+    vertical-align: top !important;
+  }
+
+  .k-grid-header-wrap {
+    border-right-width: 0px !important;
+  }
+
+  .k-grid-content {
+    overflow-y: auto !important;
+  }
+
+  .k-filter-row > td, .k-filter-row > th, .k-grid-content-locked, .k-grid-footer, .k-grid-footer-locked, .k-grid-footer-wrap, .k-grid-header, .k-grid-header-locked, .k-grid-header-wrap, .k-grid td, .k-grouping-header, .k-grouping-header .k-group-indicator, .k-header {
+    border-color: nb-theme(separator) !important;
+  }
+
+  .k-group-indicator {
+    background-color: nb-theme(layout-bg);
+  }
+
+  .k-group-indicator .k-link {
+    color: nb-theme(color-fg);
+  }
+
+  .k-group-footer td, .k-grouping-row td, tbody .k-group-cell {
+    color: nb-theme(color-fg);
+  }
+
+  .k-grid td.k-state-selected, .k-grid tr.k-state-selected {
+    color: #F9A825 !important;
+  }
+
+  .k-grid-header .k-link, .k-grid-header .k-link:hover, .k-grid-header .k-sorted {
+    color: #E57373 !important;
+  }
+  /*combobox filters in grid headers*/
+  .k-combobox.k-header {
+    width: 100% !important;
+  }
+
+  .k-tabstrip-items .k-link {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
+
+  .k-icon {
+    color: nb-theme(color-fg) !important;
+  }
+  /*border on window*/
+  .k-window-wrapper {
+    background-color: nb-theme(separator) !important;
+  }
+  /********** END: Kendo overrides *********/
+  /********** START: buttons *********/
+  .k-button {
+    background-color: nb-theme(color-primary) !important;
+    color: #ffffff !important;
+    padding: 4px 16px !important;
+  }
+
+  .k-button .k-icon {
+    color: #ffffff !important;
+  }
+
+  a.btn-hero-primary .k-icon {
+    color: #ffffff !important;
+  }
+
+  .k-button[disabled] {
+    background-color: #a4abb3 !important;
+  }
+  /*borders around grid command buttons*/
+  .k-dropdown-button {
+    background-color: transparent !important;
+  }
+
+  .k-button-group {
+    box-shadow: none !important;
+  }
+  /********** END: buttons *********/
+  /********** START: Form inputs **********/
+  .k-textarea {
+    padding: 0px 0px 6px 0px !important;
+    min-height: inherit !important;
+    border-bottom-color: rgba(0, 0, 0, 0.42) !important;
+    border-width: 0px 0px 1px !important;
+    border-style: solid !important;
+  }
+
+  .k-textarea:focus {
+    border-bottom-color: nb-theme(color-primary) !important;
+    border-bottom-width: 1px !important;
+  }
+  /*floating labels*/
+  .k-textbox-container.k-textarea-wrapper > .k-label {
+    top: 0px !important;
+    left: 10px !important;
+  }
+
+  .k-textbox-container > .k-label {
+    color: #E57373 !important;
+  }
+
+  .k-autocomplete .k-input, .k-dateinput-wrap .k-input, .k-dropdown-wrap .k-input, .k-multiselect-wrap .k-input, .k-numeric-wrap .k-input, .k-picker-wrap .k-input {
+    color: nb-theme(color-fg) !important;
+  }
+
+  .k-autocomplete, .k-dateinput-wrap, .k-dropdown-wrap, .k-multiselect-wrap, .k-numeric-wrap, .k-picker-wrap, .k-textarea, .k-textbox {
+    border-bottom-color: nb-theme(separator) !important;
+    border-radius: 0px !important;
+    color: nb-theme(color-fg) !important;
+  }
+
+  label {
+    color: #E57373 !important;
+    display: block !important;
+  }
+
+  form .k-autocomplete, form .k-combobox, form .k-dateinput, form .k-datepicker, form .k-datetimepicker, form .k-dropdown, form .k-dropdowntree, form .k-maskedtextbox, form .k-multiselect, form .k-numerictextbox, form .k-timepicker, form .k-textarea, form .k-textbox-container {
+    width: 100% !important;
+  }
+
+  .ng-valid[required], .ng-valid.required {
+    border-bottom: 1px solid #42A948 !important; /* green */
+  }
+
+  .ng-invalid:not(form) {
+    border-bottom: 1px solid #a94442 !important; /* red */
+  }
+  /*dropdowns*/
+  .k-list .k-item:hover.k-state-selected, .k-list .k-item.k-state-hover.k-state-selected, .k-list-optionlabel:hover.k-state-selected {
+    background-color: inherit !important;
+  }
+
+  .k-list .k-item.k-state-selected, .k-list-optionlabel.k-state-selected, .k-list-container .k-button:active, .k-list-container .k-button.k-state-active, .k-menu-group .k-item.k-state-selected, .k-menu.k-context-menu .k-item.k-state-selected {
+    background-color: inherit !important;
+  }
+
+  .k-nodata {
+    color: nb-theme(color-fg-text);
+  }
+
+  .k-panelbar .k-link {
+    background-color: inherit !important;
+    font-weight: 500 !important;
+  }
+  /********** END: Form inputs **********/
+  .scrollable-container, .scrollable, textarea {
+    scrollbar-face-color: nb-theme(color-primary) !important;
+    scrollbar-track-color: nb-theme(layout-bg) !important;
+  }
+  /********** START: Scroll bars **********/
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: nb-theme(layout-bg) !important;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+    border-radius: 10px !important;
+    background-color: nb-theme(layout-bg) !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: nb-theme(color-primary) !important;
+    border-radius: 5px !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important;
+  }
+  /********** END: Scroll bars **********/
+}

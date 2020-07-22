@@ -1,0 +1,1 @@
+docker stack deploy --compose-file docker-compose.yml --compose-file docker-compose.staging.yml focus-incident --with-registry-auth

@@ -1,0 +1,134 @@
+<notifications></notifications>
+
+<nb-card>
+  <nb-card-body>
+    <h1>OVERVIEWS</h1>
+    <p>
+      <i>
+        Hint: Charts for <b><u>Assignment Group, People and Applications</u></b> are showing top 20 values of each ordered from highest
+      </i>
+    </p>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-body>
+    <div class="row">
+      <div>
+        <kendo-chart style="width: 800px; height: 500px; display: inline-block;"
+                     [pannable]="{ lock: 'y' }"
+                     [zoomable]="{ mousewheel: { lock: 'y' } }">
+
+          <kendo-chart-tooltip [shared]="true">
+            <ng-template kendoChartSeriesTooltipTemplate let-category="category" let-value="value">
+              {{category}} -  {{ value }}
+            </ng-template>
+          </kendo-chart-tooltip>
+
+          <kendo-chart-title text="Primary Business Lines Overview"></kendo-chart-title>
+
+          <kendo-chart-legend [visible]="false"></kendo-chart-legend>
+
+          <kendo-chart-area background="transparent" [margin]="0"></kendo-chart-area>
+          <kendo-chart-series>
+            <kendo-chart-series-item [data]="primaryBusinessLines"
+                                     type="bar"
+                                     field="Counter"
+                                     categoryField="BusinessLine"
+                                     [labels]="{ distance: 20, padding: 0 }" [padding]="50">
+            </kendo-chart-series-item>
+          </kendo-chart-series>
+        </kendo-chart>
+      </div>
+
+      <div>
+        <kendo-chart style="width: 500px; height: 500px; display: inline-block;"
+                     [pannable]="{ lock: 'y' }"
+                     [zoomable]="{ mousewheel: { lock: 'y' } }">
+
+          <kendo-chart-tooltip [shared]="true">
+            <ng-template kendoChartSeriesTooltipTemplate let-category="category" let-value="value">
+              {{category}} -  {{ value }}
+            </ng-template>
+          </kendo-chart-tooltip>
+
+          <kendo-chart-title text="Applications Overview"></kendo-chart-title>
+
+          <kendo-chart-legend [visible]="false"></kendo-chart-legend>
+
+          <kendo-chart-area background="transparent" [margin]="0"></kendo-chart-area>
+          <kendo-chart-series>
+            <kendo-chart-series-item [data]="applications"
+                                     type="pie"
+                                     field="Counter"
+                                     categoryField="ApplicationName"
+                                     [labels]="{ distance: 20, padding: 0 }" [padding]="50">
+            </kendo-chart-series-item>
+          </kendo-chart-series>
+        </kendo-chart>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+
+
+
+      <div>
+        <kendo-chart style="width: 500px; height: 500px; display: inline-block;"
+                     [pannable]="{ lock: 'y' }"
+                     [zoomable]="{ mousewheel: { lock: 'y' } }">
+
+          <kendo-chart-tooltip [shared]="true">
+            <ng-template kendoChartSeriesTooltipTemplate let-category="category" let-value="value">
+              {{category}} -  {{ value }}
+            </ng-template>
+          </kendo-chart-tooltip>
+
+          <kendo-chart-title text="Assignment Group Overview"></kendo-chart-title>
+
+          <kendo-chart-legend [visible]="false"></kendo-chart-legend>
+
+          <kendo-chart-area background="transparent" [margin]="0"></kendo-chart-area>
+          <kendo-chart-series>
+            <kendo-chart-series-item [data]="assignmentGroups"
+                                     type="donut"
+                                     field="Counter"
+                                     categoryField="AssignmentGroup"
+                                     [labels]="{ distance: 20, padding: 0 }" [padding]="50">
+            </kendo-chart-series-item>
+          </kendo-chart-series>
+        </kendo-chart>
+      </div>
+
+      <div>
+        <kendo-chart style="width: 500px; height: 500px; "
+                     [pannable]="{ lock: 'y' }"
+                     [zoomable]="{ mousewheel: { lock: 'y' } }">
+
+          <kendo-chart-tooltip [shared]="true">
+            <ng-template kendoChartSeriesTooltipTemplate let-category="category" let-value="value">
+              {{category}} -  {{ value }}
+            </ng-template>
+          </kendo-chart-tooltip>
+
+          <kendo-chart-title text="People Overview"></kendo-chart-title>
+
+          <kendo-chart-legend [visible]="false"></kendo-chart-legend>
+
+          <kendo-chart-area background="transparent" [margin]="0"></kendo-chart-area>
+          <kendo-chart-series>
+            <kendo-chart-series-item [data]="persons"
+                                     type="donut"
+                                     field="Counter"
+                                     categoryField="personName"
+                                     [labels]="{ distance: 20, padding: 0 }" [padding]="50">
+            </kendo-chart-series-item>
+          </kendo-chart-series>
+        </kendo-chart>
+      </div>
+    </div>
+
+  </nb-card-body>
+</nb-card>
