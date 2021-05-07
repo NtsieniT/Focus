@@ -62,7 +62,7 @@
     "rxjs": "^6.2.0",
     "rxjs-compat": "^6.2.0",
     "typeface-exo": "0.0.54",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
